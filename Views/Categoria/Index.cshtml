@@ -6,7 +6,7 @@
     <!-- Outros metadados -->
     <style>
         .imagem-container {
-            height: 450px;
+            height: 400px;
             overflow: hidden;
             position: relative;
         }
@@ -90,15 +90,16 @@
     <section>
         <div class="album py-2 bg-light">
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- Aqui eu arrumo quantidade de itens por linha-->
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4">
                     @if (Model != null)
                     {
                         @foreach (var item in Model)
                         {
-                            <a asp-controller="Categoria" asp-action="Produtos" asp-route-id="@item.Id
+                            <a asp-controller="Categoria" asp-action="Produtos" asp-route-id="@item.Id"
                                class="d-flex justify-content-center p-2"
                                style="background-color: transparent; border: none; text-decoration: none;">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card" style="width: 18;">
                                     <div class="card-body">
                                         <h2 class="card-title">@item.NomeCategoria</h2>
                                         <h5 class="card-title">@item.DescricaoCategoria</h5>

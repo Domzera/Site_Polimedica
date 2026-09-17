@@ -59,9 +59,9 @@ namespace Polimedica.Controllers
                 {
                     banner = new Banner
                     {
-                        Banner1 = SalvaBanner(bannerVM.IImageUrl1),
-                        Banner2 = SalvaBanner(bannerVM.IImageUrl2),
-                        Banner3 = SalvaBanner(bannerVM.IImageUrl3)
+                        Banner1 = SalvaBanner(bannerVM.IImageUrl1!),
+                        Banner2 = SalvaBanner(bannerVM.IImageUrl2!),
+                        Banner3 = SalvaBanner(bannerVM.IImageUrl3!)
                     };
                     await _banner.Add(banner);
                     return RedirectToAction("Index", "Produto");
@@ -83,7 +83,7 @@ namespace Polimedica.Controllers
                             banner.Banner3 = SalvaBanner(bannerVM.IImageUrl3);
                         }
                     }
-                     await _banner.Update(banner);
+                     await _banner.Update(banner!);
                     return RedirectToAction("Index", "Produto");
                 }
             }

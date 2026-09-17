@@ -82,7 +82,7 @@ namespace Polimedica.Controllers
                         marcaL.Add(new DetalheMarcaViewModel
                         {
                             MarcaId = item.MarcaId,
-                            NomeMarca = todasMarcas.FirstOrDefault(m => m.Id == item.MarcaId)?.NomeMarca // Busca o nome da marca pelo ID
+                            NomeMarca = todasMarcas.FirstOrDefault(m => m.Id == item.MarcaId)?.NomeMarca! // Busca o nome da marca pelo ID
                         });
                     }
                     ViewBag.marcaDetalheVb = marcaL;

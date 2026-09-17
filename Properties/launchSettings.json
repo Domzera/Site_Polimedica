@@ -1,14 +1,14 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "RedeLocal": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "applicationUrl": "http://192.168.1.42:5080",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
+    //"RedeLocal": {
+    //  "commandName": "Project",
+    //  "dotnetRunMessages": true,
+    //  "launchBrowser": true,
+    //  "applicationUrl": "http://192.168.1.42:5080",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Development"
+    //  },
       "http": {
         "commandName": "Project",
         "dotnetRunMessages": true,
@@ -16,7 +16,6 @@
         "applicationUrl": "http://localhost:5058",
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "Development"
-        }
       },
       "https": {
         "commandName": "Project",
@@ -29,3 +28,4 @@
       }
     }
   }
+}

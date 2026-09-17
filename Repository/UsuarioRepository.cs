@@ -15,7 +15,13 @@ namespace Polimedica.Repository
         }
         public bool Add(Usuario usuario)
         {
-            _context.Add(usuario);
+            var newuser = _context.FindAsync<Usuario>(usuario.Email).Result;
+            if (newuser != null) {
+                _context.Add(usuario);
+            }else
+            {
+                return false;
+            }
             return Save();
         }
 

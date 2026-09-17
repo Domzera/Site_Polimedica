@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<Produto>
 
-<title>@ViewData["Title"] - Lista de Produtos</title>
+<title>@ViewData["Title"] Lista de Produtos</title>
 
 <head>
     <!-- Outros metadados -->
     <style>
         .imagem-container {
-            height: 450px;
+            height: 400px;
             overflow: hidden;
             position: relative;
+
+            background-color: #f8f9fa;
+
         }
 
         .imagem-ajustada {
@@ -19,6 +22,14 @@
             max-height: 100%;
             height: auto;
             width: 100%;
+
+            /*width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;*/
+
+}
+
         }
     </style>
 </head>
@@ -27,7 +38,7 @@
     <section>
         <div class="container-md text-center">
             <!-- Carrousel da pagina inicial -->
-            <div id="carouselExample" class="carousel slide">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-inner" >
                     <div class="carousel-item active imagem-container">
                         <!-- Imangem 01-->
@@ -79,14 +90,14 @@
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light">Produtos</h1>
-                    <p class="lead text-muted">Seu bem estar é nosso melhor negócio!</p>
+                    <p class="lead text-muted">Vem para a Polimédica, porque quem ama cuida!</p>
 
                 </div>
             </div>
         </section>
         <div class="album py-2" style="background-color: transparent;">
             <div class="container" style="background-color: transparent;">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                     @if(Model != null)
                     {
                         @foreach (var item in Model)

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AspNetCoreGeneratedDocument;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Polimedica.Data;
@@ -56,17 +57,17 @@ namespace Polimedica.Controllers
                                 return RedirectToAction("Dashboard", "Usuario");
                             //break;
                             case "Gerente":
-                                return RedirectToAction("Dashboard", "Usuario");
+                                return RedirectToAction("Index", "Produto");
                             //break;
                             case "Vendedor":
-                                return RedirectToAction("Index", "Produto");  //"Dashboard");
+                                return RedirectToAction("Index", "Produto");
                             //break;
                             case "Cliente_Pj":
-                                return RedirectToAction("Index", "Produto");  // "Cliente");
-                                                                              //break;
+                                return RedirectToAction("Index", "Produto");
+                            //break;
                             case "Cliente_Pf":
-                                return RedirectToAction("Index", "Produto"); // "Cliente");
-                                //break;
+                                return RedirectToAction("Index", "Produto");
+                            //break;
                         }
                     }
 
@@ -88,6 +89,7 @@ namespace Polimedica.Controllers
         {
             var response = new UserRegisterViewModel();
             return View(response);
+            
         }
         [HttpPost]
         public async Task<IActionResult> RegistroUsuario(UserRegisterViewModel userRegister)//   ==> Registro de Usuário
@@ -128,9 +130,13 @@ namespace Polimedica.Controllers
                     }
                 }
             }
-            return View(userRegister);
-
+            return RedirectToAction("UserError", "Usuario");
         }
+        public IActionResult UserError()//   ==> UserError
+        {
+            return View("UserError");
+        }
+
         [Authorize]
         public IActionResult Dashboard()//   ==> Dashboard
         {
