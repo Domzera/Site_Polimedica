@@ -61,7 +61,7 @@ namespace Polimedica.Repository
         public async Task<IEnumerable<CategoriaProduto>> GetProdutoByCategoria(int id)
         {
             return await _context.CategoriaProdutoDb
-                .FromSqlRaw("SELECT * FROM CategoriaProdutoDb WHERE CategoriaId = {0}", id)
+                .FromSqlRaw("SELECT * FROM ProdutoDb INNER JOIN CategoriaProdutoDb ON ProdutoDb.Id = CategoriaProdutoDb.ProdutoId WHERE CategoriaProdutoDb.CategoriaId = {0}", id)
                 .ToListAsync();
         }
     }

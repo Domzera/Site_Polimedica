@@ -13,25 +13,29 @@ namespace Polimedica.Controllers
         private readonly ICategoriaRepository _catere;
         private readonly ICategoriaProdutoRepository _categoriaProduto;
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IPromocaoRepository _promocaoRepository;
         private readonly IBannerRepository _banner;
+        private readonly IPromocaoRepository _promocaoRepository;
 
         public CategoriaController(
             ICategoriaRepository catere,
             ICategoriaProdutoRepository categoriaProduto,
             IProdutoRepository produtoRepository,
-            IPromocaoRepository promocaoRepository,
-            IBannerRepository banner)
+            IBannerRepository banner,
+            IPromocaoRepository promocaoRepository)
         {
             _catere = catere;
             _categoriaProduto = categoriaProduto;
             _produtoRepository = produtoRepository;
-            _promocaoRepository = promocaoRepository;
             _banner = banner;
+            _promocaoRepository = promocaoRepository;
         }
 
         public async Task<IActionResult> Index()
         {
+
+            IEnumerable<Categoria> categorias = await _catere.GetAllAsync();
+
+
             Banner banner = await _banner.GetBanner(1);
             if (banner != null)
             {
@@ -46,8 +50,7 @@ namespace Polimedica.Controllers
                 ViewBag.Banner2 = "/Image/LogoNav.png";
                 ViewBag.Banner3 = "/Image/LogoNav.png";
             }
-            IEnumerable<Categoria> categoria = await _catere.GetAllAsync();
-            return View(categoria);
+            return View(categorias);
         }
 
         [Authorize(Roles = "Admin,Gerente,Vendedor\"")]
@@ -84,37 +87,40 @@ namespace Polimedica.Controllers
 
         }
 
-        public async Task<IActionResult> Produtos(int id)
+        public async Task<IActionResult> Produtos(int id) // Esse ID é da categoria
         {
 
             List<ProdutoCategoriaViewModel> produtoList = new List<ProdutoCategoriaViewModel>();
-            var categoria = await _categoriaProduto.GetProdutoByCategoria(id);
 
-            if (categoria != null)
-            {
-                foreach(var item in categoria)
-                {
-                    var buscaProduto = _produtoRepository.GetById(id).Result;
-                    var buscaPromocao = _promocaoRepository.GetByProdutoId(id).Result;
-                    produtoList.Add(new ProdutoCategoriaViewModel
-                    {
-                        ProdutoId = id,
-                        NomeProduto = buscaProduto.NomeProduto,
-                        DescricaoProduto = buscaProduto.DescricaoProduto,
-                        Preco = buscaProduto.Preco,
-                        Imagem1 = buscaProduto.Imagem1,
-                        Imagem2 = buscaProduto.Imagem2,
-                        Imagem3 = buscaProduto.Imagem3,
-                        Imagem4 = buscaProduto.Imagem4,
-                        Imagem5 = buscaProduto.Imagem5,
-                        Ativo = buscaProduto.Ativo,
-                        Promocao = await verificaPromocao(buscaPromocao.ProdutoID),
-                        PrecoPromocional = (float?)buscaPromocao.Preco,
-                        DataFinalPromocao = buscaPromocao.DataFinal                        
-                    });
-                }
-                return View(produtoList);
-            }else
+            produtoList = (List<ProdutoCategoriaViewModel>)await _produtoRepository.GetAllProdutoPorCategoria(id);
+
+            //var categoria = await _categoriaProduto.GetProdutoByCategoria(id);
+
+            //if (categoria != null)
+            //{
+            //    foreach(var item in categoria)
+            //    {
+            //        var buscaProduto = _produtoRepository.GetById(id).Result;
+            //        var buscaPromocao = _promocaoRepository.GetByProdutoId(id).Result;
+            //        produtoList.Add(new ProdutoCategoriaViewModel
+            //        {
+            //            ProdutoId = id,
+            //            NomeProduto = buscaProduto.NomeProduto,
+            //            DescricaoProduto = buscaProduto.DescricaoProduto,
+            //            Preco = buscaProduto.Preco,
+            //            Imagem1 = buscaProduto.Imagem1,
+            //            Imagem2 = buscaProduto.Imagem2,
+            //            Imagem3 = buscaProduto.Imagem3,
+            //            Imagem4 = buscaProduto.Imagem4,
+            //            Imagem5 = buscaProduto.Imagem5,
+            //            Ativo = buscaProduto.Ativo,
+            //            Promocao = await verificaPromocao(buscaPromocao.ProdutoID),
+            //            PrecoPromocional = (float?)buscaPromocao.Preco,
+            //            DataFinalPromocao = buscaPromocao.DataFinal                        
+            //        });
+            //    }
+            //    return View(produtoList);
+            //}else
             {
                 return RedirectToAction("Index");
             }

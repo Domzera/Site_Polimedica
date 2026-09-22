@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Polimedica.Data;
 using Polimedica.Interface;
 using Polimedica.Models;
@@ -44,13 +46,21 @@ namespace Polimedica.Repository
             return (IEnumerable<Produto>)await _context.ProdutoDb.FindAsync(marca);
         }
 
-        public async Task<IEnumerable<Produto>> GetAllProdutoPorCategoria(int categoria)
+        public async Task<IEnumerable<Produto>> GetAllProdutoPorCategoria(int categoriaId)
         {
-            /*      Usar QUERY para esta pesquisa - TALVES
-             *  https://learn.microsoft.com/pt-br/aspnet/core/data/ef-mvc/advanced?view=aspnetcore-9.0
-             *  Chamar uma consulta para outros tipos
-             */
-            return (IEnumerable<Produto>)await _context.ProdutoDb.FindAsync(categoria);
+
+            var prods = _context.CategoriaProdutoDb.Where(p => p.CategoriaId == categoriaId)
+                .Select(p => p.ProdutoId).ToList();
+
+            var produtosPorCategoria = _context.ProdutoDb.Where(p => prods.Contains(p.Id)).ToListAsync();
+
+            //var ProdCat = _context.CategoriaProdutoDb.Where(cp => cp.CategoriaId == categoriaId)
+            //    .Join(_context.ProdutoDb, categoriaProduto => categoriaProduto.ProdutoId,
+            //    p => p.Id, (categoriaProduto, produto) => produto).ToList();
+            // return await ProdCat;
+            
+
+            return await produtosPorCategoria;
         }
 
         public async Task<Produto> GetById(int id)

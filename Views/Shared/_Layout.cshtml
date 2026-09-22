@@ -1,250 +1,321 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-BR"><!-- se adicionar style=" width: 80%; margin: 0 auto; background-color: lightgray;" dentro da classe, diminui o tamanho da tela de modo geral. -->
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"]Polimedica 1.02</title>
-        <script type="importmap"></script>
-        <!--Bootstrap 5.3.3 CSS-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/Polimedica.styles.css" asp-append-version="true" />
-        <link rel="stylesheet" type="text/css" href="~/css/MyStyle.css">
-    </head>
-    <!--  NAVBAR SUPERIOR -->
-    <body>
-        <header class="p-3 bg-success">
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none"></a>
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li>
-                            <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#telefoneModal">
-                                Contato
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#whatsappModal">
-                                WhatsApp
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#emailModal">
-                                E-mail
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#entregasModal">
-                                Entregas
-                            </button>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-2 text-menu">
-                                "Sobre nós"
-                            </a>
-                        </li>
-                    </ul>
+<html lang="pt-BR">
+<!-- se adicionar style=" width: 80%; margin: 0 auto; background-color: lightgray;" dentro da classe, diminui o tamanho da tela de modo geral. -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]Polimedica 1.03</title>
+    <script type="importmap"></script>
+    <!--Bootstrap 5.3.3 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Polimedica.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/MyStyle.css">
+    <!-- Outros metadados -->
+    <style>
+            .imagem-container {
+                height: 400px;
+                overflow: hidden;
+                position: relative;
+                background-color: #f8f9fa;
+            }
 
-                    <div class="text-end">
+            .imagem-ajustada {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-height: 100%;
+                height: auto;
+                width: 80%;
+            }
+    </style>
+</head>
+<!--  NAVBAR SUPERIOR -->
+<body>
+    <header class="p-3 bg-success">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none"></a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li>
+                        <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#telefoneModal">
+                            Contato
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#whatsappModal">
+                            WhatsApp
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#emailModal">
+                            E-mail
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-sucess text-menu" data-bs-toggle="modal" data-bs-target="#entregasModal">
+                            Entregas
+                        </button>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-menu">
+                            "Sobre nós"
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="text-end">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <a type="button" class="btn btn-outline-light text-menu" asp-controller="Usuario" asp-action="Logout">Sair</a>
+                    }
+                    else
+                    {
+                        <a type="button" class="btn btn-outline-light m-2 text-menu" asp-controller="Usuario" asp-action="Login">
+                            <div class="text-menu">Entrar</div>
+                        </a>
+                        <a type="button" class="btn btn-outline-light text-menu" asp-controller="Usuario" asp-action="RegistroUsuario">
+                            <div class="text-menu">Cadastrar-se</div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modais dos botoes acima-->
+    <div class="modal fade" id="telefoneModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header bg-success">
+                    <h5 class="modal-title text-light" id="telefoneModal">TELEFONE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-modal">
+                    <h2>(12) 3105-1377</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header bg-success">
+                    <h5 class="modal-title text-light" id="whatsappModal">WHATSAPP</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>(12) 99766-4716</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header bg-success">
+                    <h5 class="modal-title text-light" id="emailModal">E-MAIL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>polimedicadovale@contato.com.br</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="entregasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header bg-success">
+                    <h5 class="modal-title text-light" id="eentregasModal">Nossas entregas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>As entregas são feitas de Segunda á Sexta, no periodo da manhã e da tarde.</p>
+                    <p>
+                        Nosso motorista sai as 10:30h para fazer as entregas da manhã e
+                        14:00h para fazer as entregas da tarde, com eventuais entregas ao fim da tarde.
+                    </p>
+                    <p>As Terça, de manhã, nós entregamos em Roseira, Pindamonhangaba e Taubaté.</p>
+                    <p>E as  Quartas de manhã em Lorena Cachoeira e Cruzeiro</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR INFERIOR -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-success-subtle">
+            <div class="container-fluid">
+                <!--Logo da navbar -->
+                <img src="~/Image/LogoNav.png" class="img-thumbnail bg-transparent" alt="Logo da Polimedica" style="width: 300px;">
+                <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
                         @if (User.Identity.IsAuthenticated)
                         {
-
-                            <a type="button" class="btn btn-outline-light text-menu" asp-controller="Usuario" asp-action="Logout">Sair</a>
-                        }
-                        else
-                        {
-                            <a type="button" class="btn btn-outline-light m-2 text-menu" asp-controller="Usuario" asp-action="Login">
-                                <div class="text-menu">Entrar</div>
-                            </a>
-                            <a type="button" class="btn btn-outline-light text-menu" asp-controller="Usuario" asp-action="RegistroUsuario">
-                                <div class="text-menu">Cadastrar-se</div>
-                            </a>
-                        }
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Modais dos botoes acima-->
-        <div class="modal fade" id="telefoneModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-                    <div class="modal-header bg-success">
-                        <h5 class="modal-title text-light" id="telefoneModal">TELEFONE</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-modal">
-                        <h2>(12) 3105-1377</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-                    <div class="modal-header bg-success">
-                        <h5 class="modal-title text-light" id="whatsappModal">WHATSAPP</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h2>(12) 99766-4716</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-                    <div class="modal-header bg-success">
-                        <h5 class="modal-title text-light" id="emailModal">E-MAIL</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h3>polimedicadovale@contato.com.br</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="entregasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-                    <div class="modal-header bg-success">
-                        <h5 class="modal-title text-light" id="eentregasModal">Nossas entregas</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>As entregas são feitas de Segunda á Sexta, no periodo da manhã e da tarde.</p>
-                        <p>
-                            Nosso motorista sai as 10:30h para fazer as entregas da manhã e
-                            14:00h para fazer as entregas da tarde, com eventuais entregas ao fim da tarde.
-                        </p>
-                        <p>As Terça, de manhã, nós entregamos em Roseira, Pindamonhangaba e Taubaté.</p>
-                        <p>E as  Quartas de manhã em Lorena Cachoeira e Cruzeiro</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- NAVBAR INFERIOR -->
-        <header>
-            <nav class="navbar navbar-expand-lg bg-success-subtle">
-                <div class="container-fluid">
-                    <!--Logo da navbar -->
-                    <img src="~/Image/LogoNav.png" class="img-thumbnail bg-transparent" alt="Logo da Polimedica" style="width: 300px;">
-                    <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
-                        <ul class="navbar-nav m-auto">
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                if (User.IsInRole("Gerente") || User.IsInRole("Admin"))
-                                {
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                                            <div class="text-submenu">Produtos |</div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Usuario" asp-action="Dashboard">
-                                            <div class="text-submenu">Dashboard |</div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Produto" asp-action="CreateProduto">
-                                            <div class="text-submenu">Cria Produtos |</div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Marca" asp-action="CreateMarca">
-                                            <div class="text-submenu">Cria Marca |</div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Categoria" asp-action="CreateCategoria">
-                                            <div class="text-submenu">Cria Categorias |</div>
-                                        </a>
-                                    </li>
-                                }
-                                else if (User.IsInRole("Vendedor"))
-                                {
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                                            <div class="text-submenu">Produtos |</div>
-                                        </a>
-                                    </li>
-                                    <!--<li class="nav-item">
-                                    <a class="nav-link" asp-controller="Usuario" asp-action="Dashboard">Dashboard</a>
-                                    </li>-->
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Produto" asp-action="CreateProduto">
-                                            <div class="text-submenu">Cria Produtos |</div>
-                                        </a>
-                                    </li>
-                                }
-                                else if (User.IsInRole("Cliente_Pf") || User.IsInRole("Cliente_Pj"))
-                                {
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                                            <div class="text-submenu">Produtos</div>
-                                        </a>
-                                    </li>
-                                    @* <li class="nav-item">
-                                    <a type="nav-link" asp-controller="Usuario" asp-action="Dashboard">Dashboard</a>
-                                </li> *@
-                                }
-                            }
-                            else
+                            if (User.IsInRole("Gerente") || User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Produto" asp-action="Index">
+                                    <a class="nav-link" asp-controller="Home" asp-action="Index">
                                         <div class="text-submenu">Produtos |</div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Promocao" asp-action="Index">
-                                        <div class="text-submenu">Promoções |</div>
+                                    <a class="nav-link" asp-controller="Usuario" asp-action="Dashboard">
+                                        <div class="text-submenu">Dashboard |</div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="TerEmCasa" asp-action="Index">
-                                        <div class="text-submenu">Para ter em casa |</div>
+                                    <a class="nav-link" asp-controller="Produto" asp-action="CreateProduto">
+                                        <div class="text-submenu">Cria Produtos |</div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Categoria" asp-action="Index">
-                                        <div class="text-submenu">Categorias</div>
+                                    <a class="nav-link" asp-controller="Marca" asp-action="CreateMarca">
+                                        <div class="text-submenu">Cria Marca |</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Categoria" asp-action="CreateCategoria">
+                                        <div class="text-submenu">Cria Categorias |</div>
                                     </a>
                                 </li>
                             }
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Ex: Meia de compressão" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">
-                                <div class="text-submenu">Procurar</div>
-                            </button>
-                        </form>
-                    </div>
+                            else if (User.IsInRole("Vendedor"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Home" asp-action="Index">
+                                        <div class="text-submenu">Produtos |</div>
+                                    </a>
+                                </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link" asp-controller="Usuario" asp-action="Dashboard">Dashboard</a>
+                                    </li>-->
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Produto" asp-action="CreateProduto">
+                                        <div class="text-submenu">Cria Produtos |</div>
+                                    </a>
+                                </li>
+                            }
+                            else if (User.IsInRole("Cliente_Pf") || User.IsInRole("Cliente_Pj"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Home" asp-action="Index">
+                                        <div class="text-submenu">Produtos</div>
+                                    </a>
+                                </li>
+                                @* <li class="nav-item">
+                                    <a type="nav-link" asp-controller="Usuario" asp-action="Dashboard">Dashboard</a>
+                                </li> *@
+                            }
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Produto" asp-action="Index">
+                                    <div class="text-submenu">Produtos |</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Promocao" asp-action="Index">
+                                    <div class="text-submenu">Promoções |</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="TerEmCasa" asp-action="Index">
+                                    <div class="text-submenu">Para ter em casa |</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Categoria" asp-action="Index">
+                                    <div class="text-submenu">Categorias</div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Ex: Meia de compressão" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <div class="text-submenu">Procurar</div>
+                        </button>
+                    </form>
                 </div>
-            </nav>
-        </header>
-        <!-- BODY -->
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-        <!-- FOOTER -->
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2024 - Polimedica - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
-        </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!--Bootstrap 5.3.3 JavaScript-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        @await RenderSectionAsync("Scripts", required: false)
-    </body>
+        </nav>
+    </header>
+    <!-- BODY -->
+    <!-- Carrousel dos Banners-->
+    <div class="container">
+        <section>
+            <div class="container-md text-center">
+                <!-- Carrousel da pagina inicial -->
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active imagem-container">
+                            <!-- Imangem 01-->
+                            @if (ViewBag.banner1 != "null")
+                            {
+                                <img src="@ViewBag.banner1" class="imagem-ajustada" alt="Banner promocional 1">
+                            }
+                            else
+                            {
+                                <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 1">
+                            }
+                        </div>
+                        <div class="carousel-item imagem-container">
+                            <!-- Imangem 02-->
+                            @if (ViewBag.banner2 != "null")
+                            {
+                                <img src="@ViewBag.banner2" class="imagem-ajustada" alt="Banner promocional 2">
+                            }
+                            else
+                            {
+                                <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 2">
+                            }
+                        </div>
+                        <div class="carousel-item imagem-container">
+                            <!-- Imangem 03-->
+                            @if (ViewBag.banner3 != "null")
+                            {
+                                <img src="@ViewBag.banner3" class="imagem-ajustada" alt="Banner promocional 3">
+                            }
+                            else
+                            {
+                                <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 3">
+                            }
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!-- FOOTER -->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Polimedica - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap 5.3.3 JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
 </div>
 </html>

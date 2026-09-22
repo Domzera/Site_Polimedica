@@ -3,79 +3,16 @@
 <title>@ViewData["Title"] - Lista de Categoria</title>
 
 <head>
-    <!-- Outros metadados -->
     <style>
-        .imagem-container {
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .imagem-ajustada {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-height: 100%;
-            height: auto;
-            width: 100%;
+        .text-decora {
+            background-color: transparent;
+            border: none;
+            text-decoration: none;
         }
     </style>
 </head>
 
 <main>
-    <section>
-        <section>
-            <div class="container-md text-center">
-                <!-- Carrousel da pagina inicial -->
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active imagem-container">
-                            <!-- Imangem 01-->
-                            @if (ViewBag.banner1 != "null")
-                            {
-                                <img src="@ViewBag.banner1" class="imagem-ajustada" alt="Banner promocional 1">
-                            }
-                            else
-                            {
-                                <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 1">
-                            }
-                        </div>
-                        <div class="carousel-item imagem-container">
-                            <!-- Imangem 02-->
-                            @if (ViewBag.banner2 != "null")
-                            {
-                                <img src="@ViewBag.banner2" class="imagem-ajustada" alt="Banner promocional 2">
-                            }
-                            else
-                            {
-                                <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 2">
-                            }
-                        </div>
-                        <div class="carousel-item imagem-container">
-                            <!-- Imangem 03-->
-                            @if (ViewBag.banner3 != "null")
-                            {
-                                <img src="@ViewBag.banner3" class="imagem-ajustada" alt="Banner promocional 3">
-                            }
-                            else
-                            {
-                                <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 3">
-                            }
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-    </section>
     <sectin>
         <section class="py-2 text-center container">
             <div class="row py-lg-5">
@@ -91,15 +28,14 @@
         <div class="album py-2 bg-light">
             <div class="container">
                 <!-- Aqui eu arrumo quantidade de itens por linha-->
-                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4">
+                <div class="row row-cols-4 row-cols-sm-4 row-cols-md-4 g-4">
                     @if (Model != null)
                     {
                         @foreach (var item in Model)
                         {
                             <a asp-controller="Categoria" asp-action="Produtos" asp-route-id="@item.Id"
-                               class="d-flex justify-content-center p-2"
-                               style="background-color: transparent; border: none; text-decoration: none;">
-                                <div class="card" style="width: 18;">
+                               class="d-flex p-2 text-decora">
+                                <div class="card" style="width: 80%; text-align: center">
                                     <div class="card-body">
                                         <h2 class="card-title">@item.NomeCategoria</h2>
                                         <h5 class="card-title">@item.DescricaoCategoria</h5>
