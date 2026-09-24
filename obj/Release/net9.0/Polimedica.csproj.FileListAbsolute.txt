@@ -148,7 +148,6 @@ C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\rjsmcshtml.dswa.cache.j
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\scopedcss\bundle\Polimedica.styles.css
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\scopedcss\projectbundle\Polimedica.bundle.scp.css
-C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\2kupb9yh4l-{0}-dxcvqft7m6-dxcvqft7m6.gz
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\0wl72kd2fy-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\5ybt5bh153-{0}-n6atpzwbad-n6atpzwbad.gz
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\xiap44wsdy-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
@@ -226,3 +225,5 @@ C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\ref\Polimedica.dll
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\q39p3o6dni-{0}-ff9s5h9h3w-ff9s5h9h3w.gz
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\ogek9503o1-{0}-ff9s5h9h3w-ff9s5h9h3w.gz
 C:\Users\Alice\Desktop\SitePolimedica\bin\Release\net9.0\dotnet-tools.json
+C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\o3s0wn0shm-{0}-u7kvm6e5ap-u7kvm6e5ap.gz
+C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\2kupb9yh4l-{0}-g1p6jhhwgy-g1p6jhhwgy.gz

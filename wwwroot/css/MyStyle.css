@@ -6,3 +6,8 @@
 }
 body {
 }
+.cardSize {
+    /*width: 250px;*/
+    max-height: 445px;
+    overflow: hidden;
+}

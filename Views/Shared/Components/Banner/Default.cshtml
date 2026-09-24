@@ -3,46 +3,19 @@
 <section>
     <div class="container-md text-center">
         <!-- Carrousel da pagina inicial -->
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div id="carouselExample" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item active imagem-container">
                     <!-- Imangem 01-->
                     <img src="@Model.Banner1" class="imagem-ajustada" alt="Banner promocional 1">
-                    <!-- Como era antigamente -->
-                    <!--@if (ViewBag.banner1 != "null")
-                    {
-                        <img src="@ViewBag.banner1" class="imagem-ajustada" alt="Banner promocional 1">
-                    }
-                    else
-                    {
-                        <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 1">
-                    }-->
                 </div>
                 <div class="carousel-item imagem-container">
                     <!-- Imangem 02-->
                     <img src="@Model.Banner2" class="imagem-ajustada" alt="Banner promocional 2">
-                    <!-- Como era antigamente -->
-                    <!--@if (ViewBag.banner2 != "null")
-                    {
-                        <img src="@ViewBag.banner2" class="imagem-ajustada" alt="Banner promocional 2">
-                    }
-                    else
-                    {
-                        <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 2">
-                    }-->
                 </div>
                 <div class="carousel-item imagem-container">
                     <!-- Imangem 03-->
                     <img src="@Model.Banner3" class="imagem-ajustada" alt="Banner promocional 3">
-                    <!-- Como era antigamente -->
-                    <!--@if (ViewBag.banner3 != "null")
-                    {
-                        <img src="@ViewBag.banner3" class="imagem-ajustada" alt="Banner promocional 3">
-                    }
-                    else
-                    {
-                        <img src="~/Image/LogoNav.png" class="imagem-ajustada" alt="Banner promocional 3">
-                    }-->
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

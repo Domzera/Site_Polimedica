@@ -19,7 +19,8 @@
     <section>
         <div class="album py-2" style="background-color: transparent;">
             <div class="container" style="background-color: transparent;">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- Aqui eu coloco quanto produtos por linha, que no caso são 4 produtos por linha -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                     @if (Model != null)
                     {
                         @foreach (var item in Model)
@@ -27,7 +28,7 @@
                             @if (item.Ativo == true)
                             {
                                 <a asp-controller="Produto" asp-action="Detalhe" asp-route-id="@item.ProdutoId"
-                                   class="d-flex justify-content-center p-2"
+                                   class="d-flex justify-content-center p-2 cardSize"
                                    style="background-color: transparent; border: none; text-decoration: none;">
 
                                     <div class="card align-items-center w-100"

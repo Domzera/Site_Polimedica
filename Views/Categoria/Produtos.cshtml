@@ -3,8 +3,9 @@
 <title>@ViewData["title"] - Produtos por categoria</title>
 
 <head>
-    <!-- Outros metadados -->
-    <style>
+    <link rel="stylesheet" href="cardStyle.css" />
+    <!-- Estilos do Banner -->
+    <!--<style>
         .imagem-container {
             height: 400px;
             overflow: hidden;
@@ -20,7 +21,7 @@
             height: auto;
             width: 100%;
         }
-    </style>
+    </style>-->
 </head>
 
 <main>
@@ -36,7 +37,8 @@
         </section>
         <div class="album py-2" style="background-color: transparent;">
             <div class="container" style="background-color: transparent;">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- Aqui altera a quantidade de cards na tela, no caso tem 4 cards por linha -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                     @if (Model != null)
                     {
                         @foreach (var item in Model)
@@ -44,11 +46,11 @@
                             @if (item.Ativo == true)
                             {
                                 <a asp-controller="Produto" asp-action="Detalhe" asp-route-id="@item.Id"
-                                   class="d-flex justify-content-center p-2"
+                                   class="d-flex justify-content-center p-2 cardSize"
                                    style="background-color: transparent; border: none; text-decoration: none;">
 
-                                    <div class="card align-items-center w-100"
-                                         style="background-color: transparent; border: none; width: 18rem;">
+                                    <div class="card align-items-center w-100 cardStyle"
+                                         style="background-color: transparent; border: none; width: 18px;">
 
                                         @if (item.Imagem1 == null || item.Imagem1 == "")
                                         {
