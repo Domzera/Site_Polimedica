@@ -23,20 +23,6 @@ namespace Polimedica.Controllers
 
         public async Task<IActionResult> Index()
         {
-            Banner banner = await _banner.GetBanner(1);
-            if (banner != null)
-            {
-                ViewBag.Banner1 = banner.Banner1 == null ? "/Image/LogoNav.png" : banner.Banner1;
-                ViewBag.Banner2 = banner.Banner2 == null ? "/Image/LogoNav.png" : banner.Banner2;
-                ViewBag.Banner3 = banner.Banner3 == null ? "/Image/LogoNav.png" : banner.Banner3;
-            }
-            else
-            {
-                // Caminho padrão para o Logo da Polimeidca
-                ViewBag.Banner1 = "/Image/LogoNav.png";
-                ViewBag.Banner2 = "/Image/LogoNav.png";
-                ViewBag.Banner3 = "/Image/LogoNav.png";
-            }
             IEnumerable<Categoria> categoria = await _catere.GetAllAsync();
             return RedirectToAction("index", "Produto");
         }

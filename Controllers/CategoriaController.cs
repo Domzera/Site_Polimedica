@@ -35,21 +35,6 @@ namespace Polimedica.Controllers
 
             IEnumerable<Categoria> categorias = await _catere.GetAllAsync();
 
-
-            Banner banner = await _banner.GetBanner(1);
-            if (banner != null)
-            {
-                ViewBag.Banner1 = banner.Banner1 == null ? "/Image/LogoNav.png" : banner.Banner1;
-                ViewBag.Banner2 = banner.Banner2 == null ? "/Image/LogoNav.png" : banner.Banner2;
-                ViewBag.Banner3 = banner.Banner3 == null ? "/Image/LogoNav.png" : banner.Banner3;
-            }
-            else
-            {
-                // Caminho padrão para o Logo da Polimeidca
-                ViewBag.Banner1 = "/Image/LogoNav.png";
-                ViewBag.Banner2 = "/Image/LogoNav.png";
-                ViewBag.Banner3 = "/Image/LogoNav.png";
-            }
             return View(categorias);
         }
 
@@ -59,6 +44,7 @@ namespace Polimedica.Controllers
             var response = new CreateCategoriaViewModel();
             return View(response);
         }
+
         [HttpPost]
         [Authorize(Roles = "Admin,Gerente,Vendedor\"")]
         public async Task<IActionResult> CreateCategoria(CreateCategoriaViewModel createCategoriaVM)
@@ -89,41 +75,16 @@ namespace Polimedica.Controllers
 
         public async Task<IActionResult> Produtos(int id) // Esse ID é da categoria
         {
+            Banner banner = await _banner.GetBanner(1);
 
-            List<ProdutoCategoriaViewModel> produtoList = new List<ProdutoCategoriaViewModel>();
+            var produtos = await _produtoRepository.GetAllProdutoPorCategoria(id);
 
-            produtoList = (List<ProdutoCategoriaViewModel>)await _produtoRepository.GetAllProdutoPorCategoria(id);
-
-            //var categoria = await _categoriaProduto.GetProdutoByCategoria(id);
-
-            //if (categoria != null)
-            //{
-            //    foreach(var item in categoria)
-            //    {
-            //        var buscaProduto = _produtoRepository.GetById(id).Result;
-            //        var buscaPromocao = _promocaoRepository.GetByProdutoId(id).Result;
-            //        produtoList.Add(new ProdutoCategoriaViewModel
-            //        {
-            //            ProdutoId = id,
-            //            NomeProduto = buscaProduto.NomeProduto,
-            //            DescricaoProduto = buscaProduto.DescricaoProduto,
-            //            Preco = buscaProduto.Preco,
-            //            Imagem1 = buscaProduto.Imagem1,
-            //            Imagem2 = buscaProduto.Imagem2,
-            //            Imagem3 = buscaProduto.Imagem3,
-            //            Imagem4 = buscaProduto.Imagem4,
-            //            Imagem5 = buscaProduto.Imagem5,
-            //            Ativo = buscaProduto.Ativo,
-            //            Promocao = await verificaPromocao(buscaPromocao.ProdutoID),
-            //            PrecoPromocional = (float?)buscaPromocao.Preco,
-            //            DataFinalPromocao = buscaPromocao.DataFinal                        
-            //        });
-            //    }
-            //    return View(produtoList);
-            //}else
+            if(produtos == null || !produtos.Any())
             {
                 return RedirectToAction("Index");
             }
+
+            return View(produtos);
         }
 
         private async Task<bool> verificaPromocao(int id)
