@@ -225,5 +225,4 @@ C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\ref\Polimedica.dll
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\q39p3o6dni-{0}-ff9s5h9h3w-ff9s5h9h3w.gz
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\ogek9503o1-{0}-ff9s5h9h3w-ff9s5h9h3w.gz
 C:\Users\Alice\Desktop\SitePolimedica\bin\Release\net9.0\dotnet-tools.json
-C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\o3s0wn0shm-{0}-u7kvm6e5ap-u7kvm6e5ap.gz
 C:\Users\Alice\Desktop\SitePolimedica\obj\Release\net9.0\compressed\2kupb9yh4l-{0}-g1p6jhhwgy-g1p6jhhwgy.gz

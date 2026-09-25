@@ -1,4 +1,3 @@
-wwwroot\css\cardStyle.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\Image\LogoNav.png
@@ -66,7 +65,6 @@ wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\css\MyStyle.css
-C:\Users\Alice\Desktop\SitePolimedica\wwwroot\css\cardStyle.css
 C:\Users\Alice\Desktop\SitePolimedica\wwwroot\css\site.css
 C:\Users\Alice\Desktop\SitePolimedica\wwwroot\favicon.ico
 C:\Users\Alice\Desktop\SitePolimedica\wwwroot\js\site.js

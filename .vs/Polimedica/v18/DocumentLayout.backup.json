@@ -1,52 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\vendedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\vendedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\usuario\\registrousuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\usuario\\registrousuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\promocao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\promocao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\marca\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\marca\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\categoria\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\categoria\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\teremcasa\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\teremcasa\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|c:\\users\\alice\\desktop\\sitepolimedica\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5B914E36-CEF7-4839-A332-960C4254A9B4}|Polimedica.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -54,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 969,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -83,149 +38,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Vendedor\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Vendedor\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Vendedor\\Index.cshtml",
-              "RelativeToolTip": "Views\\Vendedor\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:49:04.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegistroUsuario.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Usuario\\RegistroUsuario.cshtml",
-              "RelativeDocumentMoniker": "Views\\Usuario\\RegistroUsuario.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Usuario\\RegistroUsuario.cshtml",
-              "RelativeToolTip": "Views\\Usuario\\RegistroUsuario.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:48:57.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Usuario\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Usuario\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Usuario\\Index.cshtml",
-              "RelativeToolTip": "Views\\Usuario\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:48:46.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Marca\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Marca\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Marca\\Index.cshtml",
-              "RelativeToolTip": "Views\\Marca\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:48:17.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:48:10.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Cliente\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cliente\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Cliente\\Index.cshtml",
-              "RelativeToolTip": "Views\\Cliente\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:48:04.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Categoria\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Categoria\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Categoria\\Index.cshtml",
-              "RelativeToolTip": "Views\\Categoria\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:47:41.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Promocao\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Promocao\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Promocao\\Index.cshtml",
-              "RelativeToolTip": "Views\\Promocao\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:47:12.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Produto\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Produto\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Produto\\Index.cshtml",
-              "RelativeToolTip": "Views\\Produto\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:45:10.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:45:26.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\TerEmCasa\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\TerEmCasa\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Alice\\Desktop\\SitePolimedica\\Views\\TerEmCasa\\Index.cshtml",
-              "RelativeToolTip": "Views\\TerEmCasa\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T12:44:19.528Z",
-              "EditorCaption": ""
             }
           ]
         }
