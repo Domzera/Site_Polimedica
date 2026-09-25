@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Polimedica.Interface;
 using Polimedica.Models;
 using Polimedica.ViewModel;
+using System.Text.Json;
 
 namespace Polimedica.Controllers
 {
@@ -45,10 +46,19 @@ namespace Polimedica.Controllers
         // Começa aqui
         public async Task<IActionResult> IndexAsync()
         {
+            // Aqui eu verifico se tem alguma coisa no 'TempData' e se tiver eu carrego a pagina com os dados 
+            //do 'TempData', se não tiver nada no 'TempData' eu carrego todos os produtos cadastrados.
+            if (TempData["Selecao"] is string categoriasJson)
+            {
+                var categorias = JsonSerializer.Deserialize<IEnumerable<Produto>>(categoriasJson);
 
+                return View(categorias);
+            }
             IEnumerable<Produto> produtos = await _produtoRepository.GetAll();
 
             return View(produtos);
+
+
         }
         public async Task<IActionResult> Detalhe(int id)
         {
@@ -145,8 +155,8 @@ namespace Polimedica.Controllers
                     DataAdicionado = DateOnly.FromDateTime(DateTime.Now),
                 };
                 await _produtoRepository.Add(produto); // Salva as alterações no BD para ProdutosBd
-                
-                if(produtoVM.Promocao)
+
+                if (produtoVM.Promocao)
                 {
                     var promocao = new Promocao
                     {
@@ -156,9 +166,9 @@ namespace Polimedica.Controllers
                         DataFinal = DateOnly.FromDateTime(DateTime.Now.AddDays(30)) // Define a data final como 30 dias após a data de início
                     };
                     await _promocaoRepository.Add(promocao); // Salva as alterações no BD para PromoçãoBd
-                }              
-                
-                if(produtoVM.TerEmCasa)
+                }
+
+                if (produtoVM.TerEmCasa)
                 {
                     var terEmCasa = new TerEmCasa
                     {
@@ -170,15 +180,15 @@ namespace Polimedica.Controllers
                 // Cuida da Promoção
                 if (produtoVM.Promocao)
                 {
-                        var promocao = new Promocao
-                        {
-                            ProdutoID = produto.Id,
-                            Preco = (Decimal)produtoVM.Preco,
-                            Datainicio = DateOnly.FromDateTime(DateTime.Now),
-                            DataFinal = DateOnly.FromDateTime(DateTime.Now.AddDays(30)) // Define a data final como 30 dias após a data de início
-                        };
-                        await _promocaoRepository.Add(promocao); // Salva as alterações no BD para PromoçãoBd
-                    
+                    var promocao = new Promocao
+                    {
+                        ProdutoID = produto.Id,
+                        Preco = (Decimal)produtoVM.Preco,
+                        Datainicio = DateOnly.FromDateTime(DateTime.Now),
+                        DataFinal = DateOnly.FromDateTime(DateTime.Now.AddDays(30)) // Define a data final como 30 dias após a data de início
+                    };
+                    await _promocaoRepository.Add(promocao); // Salva as alterações no BD para PromoçãoBd
+
                 }
 
                 // segunda parte: Criação das relações entre Produto e Marca
@@ -264,7 +274,8 @@ namespace Polimedica.Controllers
                 };
 
                 var terEmCasa = await _terEmCasaRepository.GetById(id);
-                if (terEmCasa == null) {
+                if (terEmCasa == null)
+                {
                     ProdutoEdit.TerEmCasa = false;
                 }
                 else
@@ -273,7 +284,8 @@ namespace Polimedica.Controllers
                 }
 
                 var promocao = await _promocaoRepository.GetByProdutoId(id);
-                if (promocao == null) { 
+                if (promocao == null)
+                {
                     ProdutoEdit.Promocao = false;
                 }
                 else
@@ -435,7 +447,7 @@ namespace Polimedica.Controllers
                 }
 
                 // Cuida da Promoção
-                if(produtoVM.Promocao)
+                if (produtoVM.Promocao)
                 {
                     var promocao = await _promocaoRepository.GetByProdutoId(id);
                     if (promocao == null)

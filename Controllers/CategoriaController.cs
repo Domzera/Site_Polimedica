@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Polimedica.ViewModel;
 using Polimedica.Interface;
 using Polimedica.Models;
-using System.Threading.Tasks;
-using Microsoft.Identity.Client;
+using System.Text.Json;
 
 namespace Polimedica.Controllers
 {
@@ -32,9 +31,7 @@ namespace Polimedica.Controllers
 
         public async Task<IActionResult> Index()
         {
-
             IEnumerable<Categoria> categorias = await _catere.GetAllAsync();
-
             return View(categorias);
         }
 
@@ -70,21 +67,19 @@ namespace Polimedica.Controllers
                 }
                 else { return RedirectToAction("CreateCategoria"); }
             }
-
         }
 
         public async Task<IActionResult> Produtos(int id) // Esse ID é da categoria
         {
-            Banner banner = await _banner.GetBanner(1);
+            //Aqui eu crio o objeto PRODUTO e chamo a função GetAllProdutoPorCategoria e trago só os produtos dessa categoria
+            IEnumerable<Produto> produtos = await _produtoRepository.GetAllProdutoPorCategoria(id);
 
-            var produtos = await _produtoRepository.GetAllProdutoPorCategoria(id);
+            //É preciso transformar o objeto em json para passa-lo pelo metodo de 'TempData' para o Redirect
+            //Eu uso o nome 'selecao' para poder usar um 'TempData' para Categoria - TerEmCasa - Promocao
+            TempData["Selecao"] = JsonSerializer.Serialize(produtos);
 
-            if(produtos == null || !produtos.Any())
-            {
-                return RedirectToAction("Index");
-            }
-
-            return View(produtos);
+            //No controller do INDEX do produto eu consigo acessar o 'TempData'
+            return RedirectToAction("index","Produto");
         }
 
         private async Task<bool> verificaPromocao(int id)

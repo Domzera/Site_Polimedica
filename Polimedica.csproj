@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Categoria\Produtos.cshtml" />
+    <Content Remove="wwwroot\css\cardStyle.css" />
     <Content Remove="wwwroot\Image\download.png" />
     <Content Remove="wwwroot\Image\Fachada.jpeg" />
     <Content Remove="wwwroot\Image\Fachada.png" />
