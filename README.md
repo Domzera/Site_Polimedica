@@ -134,6 +134,8 @@ Abaixo estão capturas de tela do sistema que demonstram o fluxo de navegação 
 
 ---
 
-## 👥 Autores
+## 👥 Autor
 
-*   **Seu Nome** - *Desenvolvedor do Projeto* - [Seu GitHub](https://github.com)
+*   **Luiz Célio Gomes Filho** - *Desenvolvedor do Projeto* - [Domzera](https://github.com/Domzera/Site_Polimedica)
+*   **Linkedim** - *Perfil* - [Luiz Célio](www.linkedin.com/in/luiz-cgomes)
+
